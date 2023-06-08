@@ -7,6 +7,8 @@ import org.eclipse.microprofile.health.HealthCheckResponse;
 import org.eclipse.microprofile.health.HealthCheckResponseBuilder;
 import org.eclipse.microprofile.health.Readiness;
 
+import java.util.Locale;
+
 
 @Readiness
 @ApplicationScoped
@@ -28,8 +30,9 @@ public class DatabaseConnectionHealthCheck implements HealthCheck {
             responseBuilder.up();
         }
         catch (IllegalStateException e){
-            responseBuilder.down();
+            responseBuilder.down().withData("Error:",e.toString().toUpperCase(Locale.ROOT));
         }
+
 
         return responseBuilder.build();
 

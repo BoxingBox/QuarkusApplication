@@ -1,0 +1,3 @@
+http://localhost:8080/q/health-ui/   --HEALTH CHECK UI--
+http://localhost:8080/q/health/live  --LIVENESS CHECK--
+http://localhost:8080/q/health/ready --READINESS CHECK--

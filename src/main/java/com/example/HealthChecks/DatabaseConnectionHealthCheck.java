@@ -30,7 +30,7 @@ public class DatabaseConnectionHealthCheck implements HealthCheck {
             responseBuilder.up();
         }
         catch (IllegalStateException e){
-            responseBuilder.down().withData("Error:",e.toString().toUpperCase(Locale.ROOT));
+            responseBuilder.down().withData("Error:",e.toString());
         }
 
 
